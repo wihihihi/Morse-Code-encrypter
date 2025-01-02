@@ -1,0 +1,188 @@
+//Alphabet to Morse code converter via bluetooth using Arduino and LEDs.
+/* 
+connect external LED to pin 12
+connect Tx of bluetooth module to Rx of arduino
+connect vcc pin of bluetooth module to 5v on arduino
+connect ground pin to ground pin  
+*/
+//Begin code:-
+
+char Incoming_value;  //Variable for storing Incoming_value
+void setup() {
+  Serial.begin(9600);   //Sets the data rate in bits per second (baud) for serial data transmission
+  pinMode(13, OUTPUT);  //Sets digital pin 13 as output pin
+  pinMode(12, OUTPUT);  //Sets digital pin 12 as output pin
+}
+ void dash() {              //red LED blinks to signal dash
+    digitalWrite(12, HIGH);
+    delay(500);
+    digitalWrite(12, LOW);
+    delay(500);
+  }
+  void dot() {              //yellow inbuilt LED blinks to signal dot
+    digitalWrite(13, HIGH);
+    delay(500);
+    digitalWrite(13, LOW);
+    delay(500);
+  }
+  void aksharSamaaptam() {   //both LEDs blink simultaneously to signal the end of a letter or number
+    digitalWrite(12, HIGH);
+    digitalWrite(13, HIGH);
+    delay(1000);
+    digitalWrite(12, LOW);
+    digitalWrite(13, LOW);
+    delay(1000);
+  }
+void loop() {
+  if (Serial.available() > 0) {
+    Incoming_value = Serial.read();  //Read the incoming data and store it into variable Incoming_value
+    Serial.println(Incoming_value);  //Print Value of Incoming_value in Serial monitor
+    //**************Alphabets**************
+    if (Incoming_value == 'a') {  //Checks whether value of Incoming_value is equal to a
+      dot();dash();
+      aksharSamaaptam();
+    }
+    if (Incoming_value == 'b') {  //Checks whether value of Incoming_value is equal to 0
+      dash();dot();dot();dot();
+      aksharSamaaptam();
+    }
+
+    if (Incoming_value == 'c') {
+      dash();dot();dash();dot();
+      aksharSamaaptam();
+    }
+    if (Incoming_value == 'd') {
+      dash();dot();dot();
+      aksharSamaaptam();
+    }
+    if (Incoming_value == 'e') {
+      dot();
+      aksharSamaaptam();
+    }
+    if (Incoming_value == 'f') {
+      dot();dot();dash();dot();
+      aksharSamaaptam();
+    }
+    if (Incoming_value == 'g') {
+      dash();dash();dot();
+      aksharSamaaptam();
+    }
+    if (Incoming_value == 'h') {
+      dot();dot();dot();dot();
+      aksharSamaaptam();
+    }
+    if (Incoming_value == 'i') {
+      dot();dot();
+      aksharSamaaptam();
+    }
+    if (Incoming_value == 'j') {
+      dot();dash();dash();dash();
+      aksharSamaaptam();
+    }
+    if (Incoming_value == 'k') {
+      dash();dot();dash();
+      aksharSamaaptam();
+    }
+    if (Incoming_value == 'l') {
+      dot();dash();dot();dot();
+      aksharSamaaptam();
+    }
+    if (Incoming_value == 'm') {
+      dash();dash();
+      aksharSamaaptam();
+    }
+    if (Incoming_value == 'n') {
+      dash();dot();
+      aksharSamaaptam();
+    }
+    if (Incoming_value == 'o') {
+      dash();dash();dash();
+      aksharSamaaptam();
+    }
+    if (Incoming_value == 'p') {
+      dot();dash();dash();dot();
+      aksharSamaaptam();
+    }
+    if (Incoming_value == 'q') {
+      dash();dash();dot();dash();
+      aksharSamaaptam();
+    }
+    if (Incoming_value == 'r') {
+      dot();dash();dot();
+      aksharSamaaptam();
+    }
+    if (Incoming_value == 's') {
+      dot();dot();dot();
+      aksharSamaaptam();
+    }
+    if (Incoming_value == 't') {
+      dash();  
+      aksharSamaaptam();
+    }
+    if (Incoming_value == 'u') {
+      dot();dot();dash();
+      aksharSamaaptam();
+    }
+    if (Incoming_value == 'v') {
+      dot();dot();dot();dash();
+      aksharSamaaptam();
+    }
+    if (Incoming_value == 'w') {
+      dot();dash();dash();
+      aksharSamaaptam();
+    }
+    if (Incoming_value == 'x') {
+      dash();dot();dot();dash();
+      aksharSamaaptam();
+    }
+    if (Incoming_value == 'y') {
+      dash();dot();dash();dash();
+      aksharSamaaptam();
+    }
+    if (Incoming_value == 'z') {
+      dash();dash();dot();dot();
+      aksharSamaaptam();
+    }
+    //************NUMBERS**************
+  if(Incoming_value == '1'){
+  dot(); dash();dash();dash();dash();
+  aksharSamaaptam();
+}
+if(Incoming_value == '2'){
+  dot();dot();dash();dash();dash();
+  aksharSamaaptam();
+  }
+  if(Incoming_value == '3'){
+  dot();dot();dot();dash();dash();
+  aksharSamaaptam();
+  }
+   if(Incoming_value == '4'){
+  dot();dot();dot();dot();dash();
+  aksharSamaaptam();
+  }
+  if(Incoming_value == '5'){
+  dot();dot();dot();dot();dot();
+  aksharSamaaptam();
+  }
+  if(Incoming_value == '6'){
+  dash();dot();dot();dot();dot();
+  aksharSamaaptam();
+  }
+  if(Incoming_value == '7'){
+  dash();dash();dot();dot();dot();
+  aksharSamaaptam();
+  }
+  if(Incoming_value == '8'){
+  dash();dash();dash();dot();dot();
+  aksharSamaaptam();
+  }
+  if(Incoming_value == '9'){
+  dash();dash();dash();dash();dot();
+  aksharSamaaptam();
+  }
+  if(Incoming_value == '0'){
+  dash();dash();dash();dash();dash();
+  aksharSamaaptam();
+  }
+ }
+}
