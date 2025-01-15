@@ -13,19 +13,19 @@ void setup() {
   pinMode(13, OUTPUT);  //Sets digital pin 13 as output pin
   pinMode(12, OUTPUT);  //Sets digital pin 12 as output pin
 }
- void dash() {              //red LED blinks to signal dash
+ void dash() {
     digitalWrite(12, HIGH);
     delay(500);
     digitalWrite(12, LOW);
     delay(500);
   }
-  void dot() {              //yellow inbuilt LED blinks to signal dot
+  void dot() {
     digitalWrite(13, HIGH);
     delay(500);
     digitalWrite(13, LOW);
     delay(500);
   }
-  void aksharSamaaptam() {   //both LEDs blink simultaneously to signal the end of a letter or number
+  void aksharSamaaptam() {
     digitalWrite(12, HIGH);
     digitalWrite(13, HIGH);
     delay(1000);
@@ -36,110 +36,110 @@ void setup() {
 void loop() {
   if (Serial.available() > 0) {
     Incoming_value = Serial.read();  //Read the incoming data and store it into variable Incoming_value
-    Serial.println(Incoming_value);  //Print Value of Incoming_value in Serial monitor
-    //**************Alphabets**************
-    if (Incoming_value == 'a') {  //Checks whether value of Incoming_value is equal to a
+    Serial.println(Incoming_value);  //Print Incoming_value in Serial monitor
+    //**************LETTERS**************
+    if (Incoming_value == 'a' || 'A') {  //Checks whether value of Incoming_value is equal to a
       dot();dash();
       aksharSamaaptam();
     }
-    if (Incoming_value == 'b') {  //Checks whether value of Incoming_value is equal to 0
+    if (Incoming_value == 'b' || 'B') {  
       dash();dot();dot();dot();
       aksharSamaaptam();
     }
 
-    if (Incoming_value == 'c') {
+    if (Incoming_value == 'c' || 'C') {
       dash();dot();dash();dot();
       aksharSamaaptam();
     }
-    if (Incoming_value == 'd') {
+    if (Incoming_value == 'd' || 'D') {
       dash();dot();dot();
       aksharSamaaptam();
     }
-    if (Incoming_value == 'e') {
+    if (Incoming_value == 'e' || 'E') {
       dot();
       aksharSamaaptam();
     }
-    if (Incoming_value == 'f') {
+    if (Incoming_value == 'f' || 'F') {
       dot();dot();dash();dot();
       aksharSamaaptam();
     }
-    if (Incoming_value == 'g') {
+    if (Incoming_value == 'g' || 'G') {
       dash();dash();dot();
       aksharSamaaptam();
     }
-    if (Incoming_value == 'h') {
+    if (Incoming_value == 'h' || 'H') {
       dot();dot();dot();dot();
-      aksharSamaaptam();
+      aksharSamaaptam(); 
     }
-    if (Incoming_value == 'i') {
+    if (Incoming_value == 'i' || 'I') {
       dot();dot();
       aksharSamaaptam();
     }
-    if (Incoming_value == 'j') {
+    if (Incoming_value == 'j' || 'J') {
       dot();dash();dash();dash();
       aksharSamaaptam();
     }
-    if (Incoming_value == 'k') {
+    if (Incoming_value == 'k' || 'K') {
       dash();dot();dash();
       aksharSamaaptam();
     }
-    if (Incoming_value == 'l') {
+    if (Incoming_value == 'l' || 'L') {
       dot();dash();dot();dot();
       aksharSamaaptam();
     }
-    if (Incoming_value == 'm') {
+    if (Incoming_value == 'm' || 'M') {
       dash();dash();
       aksharSamaaptam();
     }
-    if (Incoming_value == 'n') {
+    if (Incoming_value == 'n' || 'N') {
       dash();dot();
       aksharSamaaptam();
     }
-    if (Incoming_value == 'o') {
+    if (Incoming_value == 'o' || 'O') {
       dash();dash();dash();
       aksharSamaaptam();
     }
-    if (Incoming_value == 'p') {
+    if (Incoming_value == 'p' || 'P') {
       dot();dash();dash();dot();
       aksharSamaaptam();
     }
-    if (Incoming_value == 'q') {
+    if (Incoming_value == 'q' || 'Q') {
       dash();dash();dot();dash();
       aksharSamaaptam();
     }
-    if (Incoming_value == 'r') {
+    if (Incoming_value == 'r' || 'R') {
       dot();dash();dot();
       aksharSamaaptam();
     }
-    if (Incoming_value == 's') {
+    if (Incoming_value == 's' || 'S') {
       dot();dot();dot();
       aksharSamaaptam();
     }
-    if (Incoming_value == 't') {
+    if (Incoming_value == 't' || 'T') {
       dash();  
       aksharSamaaptam();
     }
-    if (Incoming_value == 'u') {
+    if (Incoming_value == 'u' || 'U') {
       dot();dot();dash();
       aksharSamaaptam();
     }
-    if (Incoming_value == 'v') {
+    if (Incoming_value == 'v' || 'V') {
       dot();dot();dot();dash();
       aksharSamaaptam();
     }
-    if (Incoming_value == 'w') {
+    if (Incoming_value == 'w' || 'W') {
       dot();dash();dash();
       aksharSamaaptam();
     }
-    if (Incoming_value == 'x') {
+    if (Incoming_value == 'x' || 'X') {
       dash();dot();dot();dash();
       aksharSamaaptam();
     }
-    if (Incoming_value == 'y') {
+    if (Incoming_value == 'y' || 'Y') {
       dash();dot();dash();dash();
       aksharSamaaptam();
     }
-    if (Incoming_value == 'z') {
+    if (Incoming_value == 'z' || 'Z') {
       dash();dash();dot();dot();
       aksharSamaaptam();
     }
